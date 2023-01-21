@@ -5,12 +5,10 @@ labels = ['Elements','Quantity','Price']
 with open("iti_grocery.csv","r") as f:
     reader_file = csv.reader(f)
     grocery_list = list(zip(*reader_file))
-#grocery product_details
 grocery_products=[]
 grocery_quantities=[]
 grocery_prices=[]
 grocery_shop=[ grocery_products,grocery_quantities,grocery_prices]
-#the bill
 customer_products=[]
 customer_quantity=[]
 customer_price=[]
@@ -64,10 +62,6 @@ if n=='1':
 							customer_price.insert(counter,quantity*grocery_prices[i])
 							total_cost +=quantity*grocery_prices[i]
 							grocery_quantities[i]-=quantity
-							# with open("Order.csv",'w',newline='') as file_2:
-								# file1_writer = csv.writer(file_2)
-								# file1_writer.writerow(labels)
-								# file1_writer.writerows(zip(*customer_list))
 						else:
 							print("Sorry not available quantity")
 				if not customer_products:
@@ -156,7 +150,7 @@ elif n=='2' :
 				elif j=='2':
 					break
 				else:
-					print("Wrong choice\n")
+					print("Inavailable choice\n")
 					break
 			elif x=='4':
 				product_name=str(input("Enter the product name :"))
@@ -178,7 +172,7 @@ elif n=='2' :
 			elif x=='0':
 				break
 	else:
-		print("Wronr Password")
+		print("Wrong Password")
 		quit()
 	
 elif n== '0' :
@@ -186,7 +180,7 @@ elif n== '0' :
 	print("                                End of Processs")
 	quit()
 else:
-	print("Wrong Choice")
+	print("Inavailable Choice")
 
 with open("iti_grocery.csv",'w',newline='') as file_1:
     file_writer = csv.writer(file_1)
